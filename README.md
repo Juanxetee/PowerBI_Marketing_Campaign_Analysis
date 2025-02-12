@@ -7,13 +7,12 @@ Este proyecto en Power BI analiza [breve descripción del análisis realizado, p
 📂 Estructura del Proyecto
 
 📂 Mi_Proyecto_PowerBI
-│── 📂 Docs          # Documentación del proyecto
+│── 📂 Data          # Documentación del proyecto
 │   │── JuanJBuquerin.pdf  # Explicación en PDF
 │── 📂 DAX           # Código de medidas DAX
 │   │── DAXMedidasJuanJBuquerin.dax
-│── 📄 JuanJBuquerin.pbix  # Archivo del reporte de Power BI
+│── 📄 My_project.pbix  # Archivo del reporte de Power BI
 │── 📄 README.md     # Explicación del proyecto
-│── 📄 .gitignore    # Ignorar archivos innecesarios
 
 📊 Contenido del Dashboard
 
