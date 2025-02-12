@@ -2,7 +2,7 @@
 
 📌 Descripción
 
-Este proyecto en Power BI analiza [breve descripción del análisis realizado, por ejemplo: "el consumo energético de hogares en diferentes regiones"]. Se utilizan visualizaciones interactivas para explorar tendencias, patrones y métricas clave.
+Este proyecto en Power BI analiza los datos recogidos en las campañas de marketing de una empresa. Se utilizan visualizaciones interactivas para explorar tendencias, patrones y métricas clave.
 
 📂 Estructura del Proyecto
 
@@ -19,9 +19,9 @@ Este proyecto en Power BI analiza [breve descripción del análisis realizado, p
 
 El dashboard incluye:
 
-🔹 Visualización de [métricas principales, por ejemplo: "consumo mensual por hogar"].
+🔹 Visualización de métricas principales.
 
-🔹 Análisis de [ejemplo: "tendencias a lo largo del año"].
+🔹 Análisis de clientes y productos.
 
 🔹 Filtros interactivos para explorar los datos.
 
@@ -31,11 +31,9 @@ Power BI – Para la visualización y modelado de datos.
 
 DAX – Para cálculos y medidas personalizadas.
 
-Fuentes de datos: [Especificar si aplicable, por ejemplo: "datos de consumo energético de 2023"].
-
 📖 Instrucciones para Ejecutarlo
 
-Descarga el archivo JuanJBuquerin.pbix.
+Descarga el archivo My_project.pbix.
 
 Ábrelo con Power BI Desktop.
 
