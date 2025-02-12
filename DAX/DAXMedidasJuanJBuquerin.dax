@@ -1,0 +1,71 @@
+﻿DEFINE 
+---- MODEL MEASURES BEGIN ----
+MEASURE 'DAX Medidas'[Campañas Totales] = 5
+MEASURE 'DAX Medidas'[Canal Preferido] = 
+SWITCH(
+    TRUE(),
+    [Compras Web] >= [Compras Tienda] && [Compras Web] >= [Compras Catalogo], "Web",
+    [Compras Tienda] >= [Compras Catalogo], "Tienda",
+    "Catálogo"
+)
+MEASURE 'DAX Medidas'[Clientes con Quejas] = 
+CALCULATE(
+    DISTINCTCOUNT(f_Transacciones[ID]),
+    f_Transacciones[Complain] = 1
+)
+MEASURE 'DAX Medidas'[Compras Catalogo] = SUM(f_Transacciones[NumCatalogPurchases])
+MEASURE 'DAX Medidas'[Compras Descuento] = SUM(f_Transacciones[NumDealsPurchases])
+MEASURE 'DAX Medidas'[Compras Tienda] = SUM(f_Transacciones[NumStorePurchases])
+MEASURE 'DAX Medidas'[Compras Web] = SUM(f_Transacciones[NumWebPurchases])
+MEASURE 'DAX Medidas'[Consumo Total Carne] = SUM(d_Productos[MntMeatProducts])
+
+MEASURE 'DAX Medidas'[Consumo Total Cliente] = 
+SUMX(
+    d_Productos,
+    d_Productos[MntWines] + d_Productos[MntFruits] + d_Productos[MntFishProducts] + 
+    d_Productos[MntMeatProducts] + d_Productos[MntSweetProducts] + d_Productos[MntGoldProds]
+)
+
+MEASURE 'DAX Medidas'[Consumo Total Dulces] = SUM(d_Productos[MntSweetProducts])
+MEASURE 'DAX Medidas'[Consumo Total Frutas] = SUM(d_Productos[MntFruits])
+MEASURE 'DAX Medidas'[Consumo Total P.Gold] = SUM(d_Productos[MntGoldProds])
+MEASURE 'DAX Medidas'[Consumo Total Pescado] = SUM(d_Productos[MntFishProducts])
+MEASURE 'DAX Medidas'[Consumo Total Vinos] = SUM(d_Productos[MntWines])
+MEASURE 'DAX Medidas'[Frecuencia Compras] = 
+COUNTROWS(
+    FILTER(
+        f_Transacciones,
+        f_Transacciones[ID] = SELECTEDVALUE(d_Clientes[ID])
+    )
+)
+MEASURE 'DAX Medidas'[Gasto Clientes Quejas] = 
+CALCULATE(
+    [Consumo Total Cliente],
+    f_Transacciones[Complain] = 1
+)
+MEASURE 'DAX Medidas'[Gasto Promedio Cliente] = 
+DIVIDE(
+    [Consumo Total Cliente],
+    [Total Clientes]
+)
+
+MEASURE 'DAX Medidas'[Ingreso Medio] = AVERAGE(d_Clientes[Ingresos])
+MEASURE 'DAX Medidas'[Producto Preferido] = 
+SWITCH(
+    TRUE(),
+    SUM(d_Productos[MntWines]) >= SUM(d_Productos[MntFruits]) && 
+    SUM(d_Productos[MntWines]) >= SUM(d_Productos[MntMeatProducts]), "Vinos",
+    SUM(d_Productos[MntFruits]) >= SUM(d_Productos[MntMeatProducts]), "Frutas",
+    "Cárnicos"
+)
+MEASURE 'DAX Medidas'[Promedio Carne] = AVERAGE(d_Productos[MntMeatProducts])
+MEASURE 'DAX Medidas'[Promedio Dulces] = AVERAGE(d_Productos[MntSweetProducts])
+MEASURE 'DAX Medidas'[Promedio Fruta] = AVERAGE(d_Productos[MntFruits])
+MEASURE 'DAX Medidas'[Promedio P.Gold] = AVERAGE(d_Productos[MntGoldProds])
+MEASURE 'DAX Medidas'[Promedio Pescado] = AVERAGE(d_Productos[MntFishProducts])
+MEASURE 'DAX Medidas'[Promedio Vinos] = AVERAGE(d_Productos[MntWines])
+MEASURE 'DAX Medidas'[Ticket Promedio] = 
+DIVIDE([Consumo Total Cliente], [Frecuencia Compras])
+MEASURE 'DAX Medidas'[Total Clientes] = DISTINCTCOUNT(f_Transacciones[ID])
+---- MODEL MEASURES END ----
+
