@@ -8,7 +8,8 @@ Este proyecto en Power BI analiza [breve descripción del análisis realizado, p
 
 📂 Mi_Proyecto_PowerBI
 │── 📂 Data          # Documentación del proyecto
-│   │── JuanJBuquerin.pdf  # Explicación en PDF
+│   │──marketing_campaign.xlsx # Datos de origen
+│   │── My_project.pdf  # Explicación en PDF
 │── 📂 DAX           # Código de medidas DAX
 │   │── DAXMedidasJuanJBuquerin.dax
 │── 📄 My_project.pbix  # Archivo del reporte de Power BI
