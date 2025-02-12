@@ -6,7 +6,7 @@ Este proyecto en Power BI analiza [breve descripción del análisis realizado, p
 
 📂 Estructura del Proyecto
 
-📂 Mi_Proyecto_PowerBI
+📂 PowerBI_Marketing_Campaign_Analysis
 │── 📂 Data          # Documentación del proyecto
 │   │──marketing_campaign.xlsx # Datos de origen
 │   │── My_project.pdf  # Explicación en PDF
